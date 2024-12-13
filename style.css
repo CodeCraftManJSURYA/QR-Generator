@@ -1,0 +1,116 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  background: rgb(19, 10, 170);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 10, 170, 1) 0%,
+    rgba(104, 191, 130, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.container {
+  width: 400px;
+  padding: 25px 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+}
+
+.container p {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.container input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid rgb(19, 10, 170);
+  outline: none;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border-radius: 5px;
+}
+
+#generateBtn {
+  width: 80%;
+  height: 50px;
+  background: rgb(19, 10, 170);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 10, 170, 1) 0%,
+    rgba(104, 191, 130, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin: 20px 0;
+  font-weight: 500;
+  color: #fff;
+}
+
+#downloadeBtn {
+  width: 40px;
+  height: 50px;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  top: 17px;
+  left: 10px;
+}
+
+#imgBox {
+  width: 200px;
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+}
+
+#imgBox img {
+  width: 100%;
+  padding: 10px;
+}
+#imgBox.show-img {
+  max-height: 300px;
+  margin: 10px auto;
+  border: 1px solid #d1d1d1;
+}
+
+.errors {
+  animation: shake 0.1s linear 10;
+}
+
+@keyframes shake {
+  0% {
+    transform: translatex(0);
+  }
+  25% {
+    transform: translatex(-2px);
+  }
+  50% {
+    transform: translatex(0);
+  }
+  75% {
+    transform: translatex(2px);
+  }
+  100% {
+    transform: translatex(0);
+  }
+}
