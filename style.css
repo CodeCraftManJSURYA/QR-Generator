@@ -1,8 +1,9 @@
+/* General reset */
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -13,17 +14,20 @@ body {
     rgba(104, 191, 130, 1) 100%,
     rgba(0, 212, 255, 1) 100%
   );
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 25px 35px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background: #fff;
   border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .container p {
@@ -40,6 +44,11 @@ body {
   padding: 10px;
   margin: 10px 0 20px;
   border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.container input.errors {
+  border-color: red;
 }
 
 #generateBtn {
@@ -60,11 +69,16 @@ body {
   margin: 20px 0;
   font-weight: 500;
   color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#generateBtn:hover {
+  background: rgb(0, 212, 255); /* Lighter on hover */
 }
 
 #downloadeBtn {
   width: 40px;
-  height: 50px;
+  height: 40px;
   background: #fff;
   border: none;
   border-radius: 5px;
@@ -73,6 +87,11 @@ body {
   position: relative;
   top: 17px;
   left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#downloadeBtn:hover {
+  background-color: #f1f1f1; /* Light grey hover effect */
 }
 
 #imgBox {
@@ -81,36 +100,52 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 1s;
+  margin: 20px auto;
 }
 
 #imgBox img {
   width: 100%;
   padding: 10px;
 }
+
 #imgBox.show-img {
   max-height: 300px;
-  margin: 10px auto;
   border: 1px solid #d1d1d1;
 }
 
 .errors {
-  animation: shake 0.1s linear 10;
+  animation: shake 0.3s ease-out 3; /* Slightly longer shake for better effect */
 }
 
 @keyframes shake {
   0% {
-    transform: translatex(0);
+    transform: translateX(0);
   }
   25% {
-    transform: translatex(-2px);
+    transform: translateX(-4px);
   }
   50% {
-    transform: translatex(0);
+    transform: translateX(4px);
   }
   75% {
-    transform: translatex(2px);
+    transform: translateX(-4px);
   }
   100% {
-    transform: translatex(0);
+    transform: translateX(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  #generateBtn {
+    width: 90%; /* Make button full width on small screens */
+  }
+
+  #downloadeBtn {
+    width: 35px; /* Adjust download button size on mobile */
   }
 }
